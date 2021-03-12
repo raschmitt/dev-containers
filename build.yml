@@ -11,7 +11,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      docker-compose up  
+      docker-compose up -d
     failOnStderr: true
 
 - task: Bash@3
