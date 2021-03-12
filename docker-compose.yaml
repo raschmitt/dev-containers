@@ -11,7 +11,7 @@ services:
             - ACCEPT_EULA=Y
             - SA_PASSWORD=sa@@2020
         healthcheck:
-            test: /opt/mssql-tools/bin/sqlcmd -U sa -P $$SA_PASSWORD -Q "SELECT 1"
+            test: /opt/mssql-tools/bin/sqlcmd -U sa -P wrong_password -Q "SELECT 1"
         ports:
             - "1433:1433"
         volumes: 
