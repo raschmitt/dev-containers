@@ -7,15 +7,13 @@ My standard container for local development with sql-server
 
 ## Running the container
 
-- ### Running the container
-
 Use this command to run the container
 
 ```cmd
 curl https://cutt.ly/GzP7LZI -o docker-compose.yaml && docker-compose up -d
 ```
 
-- ### Database Credentials
+## Database Credentials
 
 To connect to the database you can use the following credentials:
 
