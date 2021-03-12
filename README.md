@@ -1,5 +1,5 @@
 # sql-server-container
-My standard container for local development with sql-server
+My standard container for local development with sql-server.
 
 ## Dependencies 
 
