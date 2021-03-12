@@ -1,32 +1,33 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+jobs:
+- job: build_test
+  displayName: 'Build & Test Container'
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
 
-steps:
+  - task: Bash@3
+    displayName: 'Build container'
+    inputs:
+      targetType: 'inline'
+      script: |
+        docker-compose up -d
 
-- task: Bash@3
-  displayName: 'Build container'
-  inputs:
-    targetType: 'inline'
-    script: |
-      docker-compose up -d
-    failOnStderr: true
-
-- task: Bash@3
-  displayName: 'Test container health'
-  inputs:
-    targetType: 'inline'
-    script: |
-      expected_result="\"healthy\""
-      result=`docker inspect --format "{{json .State.Health.Status }}" sql-server`
-      
-      if [ "$expected_result" = "$result" ]; then
-          echo "Container is healthy"
-          exit 0
-      else
-          echo "Conatiner is unhealthy"
-          exit 1
-      fi
-    failOnStderr: true
+  - task: Bash@3
+    displayName: 'Test container health'
+    inputs:
+      targetType: 'inline'
+      script: |
+        expected_result="\"healthy\""
+        result=`docker inspect --format "{{json .State.Health.Status }}" sql-server`
+        
+        if [ "$expected_result" = "$result" ]; then
+            echo "Container is healthy"
+            exit 0
+        else
+            echo "Conatiner is unhealthy"
+            exit 1
+        fi
+      failOnStderr: true
