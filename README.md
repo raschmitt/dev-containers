@@ -7,7 +7,7 @@ My standard container for local development with sql-server
 
 ## Running the container
 
-Use this command to run the container
+To build and run the container use this command:
 
 ```
 curl https://raw.githubusercontent.com/raschmitt/sql-server-container/main/docker-compose.yaml \
