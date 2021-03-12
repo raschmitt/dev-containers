@@ -9,9 +9,9 @@ My standard container for local development with sql-server
 
 Use this command to run the container
 
-```cmd
+`
 curl https://raw.githubusercontent.com/raschmitt/sql-server-container/main/docker-compose.yaml -o docker-compose.yaml && docker-compose up -d
-```
+`
 
 ## Database Credentials
 
