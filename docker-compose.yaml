@@ -1,0 +1,18 @@
+version: "3.8"
+
+volumes:
+    sql-server:
+
+services:     
+    sql-server:
+        image: "mcr.microsoft.com/mssql/server:2017-latest"
+        container_name: sql-server
+        environment:
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=sa@@2020
+        healthcheck:
+            test: /opt/mssql-tools/bin/sqlcmd -U sa -P $$SA_PASSWORD -Q "SELECT 1"
+        ports:
+            - "1433:1433"
+        volumes: 
+            - sql-server:/var/opt/mssql
