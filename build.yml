@@ -20,16 +20,21 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        sleep 120s
+        db_server=127.0.0.1,1433
+        db_username=sa
+        db_password=sa@@2020
 
-        expected_result="\"healthy\""
-        result=`docker inspect --format "{{json .State.Health.Status }}" sql-server`
-        
-        if [ "$expected_result" = "$result" ]; then
-            echo "Container is healthy"
+        max_retries=5
+        i=1
+
+        while [ $i -le $max_retries ]
+        do
+          sqlcmd -S $db_server -U $db_username -P $db_password -Q "SELECT 1" && i=0 || i=$(( $i + 1 ))
+
+          if [ $i -eq 0 ]
+          then
             exit 0
-        else
-            echo "Conatiner is unhealthy"
-            exit 1
-        fi
-      failOnStderr: true
+          fi
+        done
+
+        exit 1
