@@ -8,12 +8,12 @@ jobs:
     vmImage: 'ubuntu-latest'
   steps:
 
-  - task: Bash@3
-    displayName: 'Build container'
-    inputs:
-      targetType: 'inline'
-      script: |
-        docker-compose up -d
+  # - task: Bash@3
+  #   displayName: 'Build container'
+  #   inputs:
+  #     targetType: 'inline'
+  #     script: |
+  #       docker-compose up -d
 
   - task: Bash@3
     displayName: 'Test container health'
