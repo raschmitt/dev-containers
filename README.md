@@ -15,11 +15,12 @@ To build and run the container use this command:
 ```
 curl https://raw.githubusercontent.com/raschmitt/sql-server-container/main/docker-compose.yml \
 -o docker-compose.yml \
-&& docker-compose up -d
+&& docker-compose up -d \
+&& rm docker-compose.yml
 ```
 
 
-## Database Credentials
+## Database credentials
 
 To connect to the database you can use the following credentials:
 
