@@ -35,6 +35,8 @@ jobs:
           then
             exit 0
           fi
+
+          sleep 15s
         done
 
         exit 1
