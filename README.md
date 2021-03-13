@@ -19,7 +19,7 @@ curl https://raw.githubusercontent.com/raschmitt/sql-server-container/main/docke
 ```
 
 
-## Database Credentials
+## Database credentials
 
 To connect to the database you can use the following credentials:
 
