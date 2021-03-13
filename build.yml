@@ -29,7 +29,7 @@ jobs:
 
         while [ $i -le $max_retries ]
         do
-          echo "Trying to connect to sql-server container $i"
+          echo "Trying to connect to sql-server container $i ..."
 
           sqlcmd -S $db_server -U $db_username -P $db_password -Q "SELECT 1" && i=0 || i=$(( $i + 1 ))
 
