@@ -1,6 +1,9 @@
 trigger:
 - main
 
+variables:
+- group: sql-server-container
+
 jobs:
 - job: build_test
   displayName: 'Build & Test Container'
@@ -20,10 +23,6 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        db_server=127.0.0.1,1433
-        db_username=sa
-        db_password=sa@@2020
-
         max_retries=5
         i=1
 
@@ -31,7 +30,7 @@ jobs:
         do
           echo "Trying to connect to sql-server container $i ..."
 
-          sqlcmd -S $db_server -U $db_username -P $db_password -Q "SELECT 1" && i=0 || i=$(( $i + 1 ))
+          sqlcmd -S $(server) -U $(username) -P $(password) -Q "SELECT 1" && i=0 || i=$(( $i + 1 ))
 
           if [ $i -eq 0 ]
           then
