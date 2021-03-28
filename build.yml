@@ -32,30 +32,4 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        sqlcmd -S $(server) -U $(username) -P $(password) -Q "SELECT 1"
-
-  # - task: Bash@3
-  #   displayName: 'Test container health'
-  #   inputs:
-  #     targetType: 'inline'
-  #     script: |
-  #       max_retries=5
-  #       i=1
-
-  #       while [ $i -le $max_retries ]
-  #       do
-  #         echo "Trying to connect to sql-server container $i ..."
-
-  #         sqlcmd -S $(server) -U $(username) -P $(password) -Q "SELECT 1" && i=0 || i=$(( $i + 1 ))
-
-  #         if [ $i -eq 0 ]
-  #         then
-  #           echo "sql-server container is working fine"
-  #           exit 0
-  #         fi
-
-  #         sleep 15s
-  #       done
-
-  #       echo "sql-server container is not working"
-  #       exit 1
+        sqlcmd -S bacon -U $(username) -P $(password) -Q "SELECT 1"
