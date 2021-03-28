@@ -23,7 +23,7 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        wget https://raw.githubusercontent.com/jordyv/wait-for-healthy-container/master/wait-for-healthy-container.sh
+        wget https://raw.githubusercontent.com/raschmitt/wait-for-healthy-container/master/wait-for-healthy-container.sh
 
         bash wait-for-healthy-container.sh sql-server
     
@@ -32,4 +32,4 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        sqlcmd -S bacon -U $(username) -P $(password) -Q "SELECT 1"
+        sqlcmd -S $(server) -U $(username) -P $(password) -Q "SELECT 1"
