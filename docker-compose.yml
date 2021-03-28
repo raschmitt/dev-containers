@@ -1,8 +1,5 @@
 version: "3.8"
 
-volumes:
-    sql-server:
-
 services:     
     sql-server:
         image: "mcr.microsoft.com/mssql/server:2017-latest"
