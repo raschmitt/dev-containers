@@ -13,7 +13,8 @@ My standard container for local development with sql-server.
 To build and run the container use this command:
 
 ```
-wget https://raw.githubusercontent.com/raschmitt/sql-server-container/main/docker-compose.yml \
+curl https://raw.githubusercontent.com/raschmitt/sql-server-container/main/docker-compose.yml \
+-o docker-compose.yml \
 && docker-compose up -d \
 && rm docker-compose.yml
 ```
