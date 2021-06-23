@@ -13,6 +13,6 @@ services:
         healthcheck:
             test: /opt/mssql-tools/bin/sqlcmd -U sa -P $$SA_PASSWORD -Q "SELECT 1"
         ports:
-            - "1433:1433"
+            - 1433:1433
         volumes: 
             - sql-server:/var/opt/mssql
