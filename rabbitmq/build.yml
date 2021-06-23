@@ -38,4 +38,3 @@ jobs:
       targetType: 'inline'
       script: |
         curl --user $(username):$(password) --fail localhost:15672/api/nodes
-
