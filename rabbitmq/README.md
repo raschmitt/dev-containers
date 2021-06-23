@@ -1,8 +1,8 @@
-# sql-server-container
+# rabbitmq-container
 
 [![Azure DevOps builds](https://img.shields.io/azure-devops/build/raschmitt/7618d927-8467-43e2-b5e9-1aeddc1fbfdc/28?label=Build%20%26%20Test&style=flat-square)](https://dev.azure.com/raschmitt/raschmitt/_build?definitionId=28)
 
-My standard container for local development with sql-server.
+My standard container for local development with rabbitmq.
 
 ## Dependencies 
 
