@@ -4,7 +4,7 @@ trigger:
     - main
   paths:
     include:
-    - rabbitmq
+    - sql-server
 
 variables:
 - group: sql-server-container
