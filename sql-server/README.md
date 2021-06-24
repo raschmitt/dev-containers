@@ -2,7 +2,7 @@
 
 [![Azure DevOps builds](https://img.shields.io/azure-devops/build/raschmitt/7618d927-8467-43e2-b5e9-1aeddc1fbfdc/28?label=Build%20%26%20Test&style=flat-square)](https://dev.azure.com/raschmitt/raschmitt/_build?definitionId=28)
 
-My standard container for local development with sql-server.
+My standard container for local development with [SQL-Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads).
 
 ## Dependencies 
 
@@ -13,13 +13,13 @@ My standard container for local development with sql-server.
 To build and run the container use this command:
 
 ```
-curl https://raw.githubusercontent.com/raschmitt/sql-server-container/main/docker-compose.yml \
+curl https://raw.githubusercontent.com/raschmitt/sql-server-container/feature/dev-containers/sql-server/docker-compose.yml \
 -o docker-compose.yml \
 && docker-compose up -d \
 && rm docker-compose.yml
 ```
 
-## Database credentials
+## Credentials
 
 To connect to the database you can use the following credentials:
 
