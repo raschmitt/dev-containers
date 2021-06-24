@@ -13,7 +13,7 @@ My standard container for local development with [RabbitMQ](https://www.rabbitmq
 To build and run the container use this command:
 
 ```
-curl https://raw.githubusercontent.com/raschmitt/sql-server-container/feature/dev-containers/rabbitmq/docker-compose.yml \
+curl https://raw.githubusercontent.com/raschmitt/dev-containers/feature/dev-containers/rabbitmq/docker-compose.yml \
 -o docker-compose.yml \
 && docker-compose up -d \
 && rm docker-compose.yml
