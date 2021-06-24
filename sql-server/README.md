@@ -13,7 +13,7 @@ My standard container for local development with [SQL-Server](https://www.micros
 To build and run the container use this command:
 
 ```
-curl https://raw.githubusercontent.com/raschmitt/dev-containers/feature/dev-containers/sql-server/docker-compose.yml \
+curl https://raw.githubusercontent.com/raschmitt/dev-containers/main/sql-server/docker-compose.yml \
 -o docker-compose.yml \
 && docker-compose up -d \
 && rm docker-compose.yml
