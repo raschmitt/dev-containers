@@ -21,7 +21,7 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        docker-compose up -d
+        docker-compose -f sql-server/docker-compose.yml up -d
 
   - task: Bash@3
     displayName: 'Wait until container is healthy'
