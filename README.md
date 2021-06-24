@@ -6,8 +6,6 @@ These are my standard containers for local development.
 
 - [Docker](https://docs.docker.com/get-docker/)
 
-## Tools
-
 Each tool counts with it's own instructions on how to run and use it.
 
 - [RabbitMQ](https://github.com/raschmitt/dev-containers/tree/feature/dev-containers/rabbitmq)
