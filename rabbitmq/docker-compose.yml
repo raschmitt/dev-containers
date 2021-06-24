@@ -1,0 +1,15 @@
+volumes:
+  rabbitmq:
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    hostname: rabbitmq
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+    ports:
+        - 5672:5672
+        - 15672:15672
+    volumes: 
+      - rabbitmq:/var/lib/rabbitmq/

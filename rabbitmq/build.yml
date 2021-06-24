@@ -1,0 +1,40 @@
+trigger:
+  branches:
+    include:
+    - main
+  paths:
+    include:
+    - rabbitmq
+
+variables:
+- group: rabbitmq-container
+
+jobs:
+- job: build_test
+  displayName: 'Build & Test Container'
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+
+  - task: Bash@3
+    displayName: 'Build container'
+    inputs:
+      targetType: 'inline'
+      script: |
+         docker-compose -f rabbitmq/docker-compose.yml up -d
+
+  - task: Bash@3
+    displayName: 'Wait until container is healthy'
+    inputs:
+      targetType: 'inline'
+      script: |
+        wget https://raw.githubusercontent.com/raschmitt/wait-for-healthy-container/master/wait-for-healthy-container.sh
+
+        bash wait-for-healthy-container.sh rabbitmq
+    
+  - task: Bash@3
+    displayName: 'Test container health'
+    inputs:
+      targetType: 'inline'
+      script: |
+        curl --user $(username):$(password) --fail localhost:15672/api/nodes
