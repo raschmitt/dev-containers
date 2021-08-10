@@ -8,5 +8,5 @@ These are my standard containers for local development.
 
 Each tool counts with it's own instructions on how to run and use it.
 
-- [RabbitMQ](https://github.com/raschmitt/dev-containers/tree/feature/dev-containers/rabbitmq)
-- [SQL-Server](https://github.com/raschmitt/dev-containers/tree/feature/dev-containers/sql-server)
+- [RabbitMQ](https://github.com/raschmitt/dev-containers/tree/main/rabbitmq)
+- [SQL-Server](https://github.com/raschmitt/dev-containers/tree/main/sql-server)
