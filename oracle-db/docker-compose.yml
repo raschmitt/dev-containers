@@ -1,0 +1,18 @@
+volumes:
+    oracle-db:
+
+services:     
+    oracle-db:
+        image: wnameless/oracle-xe-11g-r2
+        container_name: oracle-db
+        environment:
+            - SYSTEM_USERNAME=system
+            - SYSTEM_PASSWORD=oracle
+        healthcheck:
+            test: bash ./healthcheck.sh
+            retries: 2
+        ports:
+            - 1521:1521
+        volumes: 
+            - oracle-db:/duo
+            - ./healthcheck.sh:/healthcheck.sh
