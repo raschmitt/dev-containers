@@ -19,7 +19,7 @@ curl https://raw.githubusercontent.com/raschmitt/dev-containers/main/oracle-db/d
 -o healthcheck.sh \
 && docker-compose up -d \
 && rm docker-compose.yml \
-&& rm healthcheck.sh \
+&& rm healthcheck.sh
 ```
 
 ## Credentials
