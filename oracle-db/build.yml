@@ -33,6 +33,14 @@ jobs:
         bash wait-for-healthy-container.sh oracle-db
     
   - task: Bash@3
+    displayName: 'Set database credentials'
+    inputs:
+      targetType: 'inline'
+      script: |
+        $ export SYSTEM_USERNAME=$(SYSTEM_USERNAME)
+        $ export SYSTEM_PASSWORD=$(SYSTEM_PASSWORD)
+
+  - task: Bash@3
     displayName: 'Test container health'
     inputs:
       filePath: 'oracle-db/healthcheck.sh'
