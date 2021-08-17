@@ -35,6 +35,4 @@ jobs:
   - task: Bash@3
     displayName: 'Test container health'
     inputs:
-      targetType: 'inline'
-      script: |
-        sqlcmd -S $(server) -U $(username) -P $(password) -Q "SELECT 1"
+      filePath: 'oracle-db/healthcheck.sh'
