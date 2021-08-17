@@ -31,21 +31,4 @@ jobs:
         wget https://raw.githubusercontent.com/raschmitt/wait-for-healthy-container/master/wait-for-healthy-container.sh
 
         bash wait-for-healthy-container.sh oracle-db
-    
-  # - task: Bash@3
-  #   displayName: 'Test container health'
-  #   inputs:
-  #     targetType: 'inline'
-  #     script: |
-  #       $ export SYSTEM_USERNAME=$(SYSTEM_USERNAME)
-  #       $ export SYSTEM_PASSWORD=$(SYSTEM_PASSWORD)
-
-  #       bash oracle-db/healthcheck.sh
-
-  - task: Bash@3
-    displayName: 'Test container health'
-    inputs:
-      filePath: 'oracle-db/healthcheck.sh'
-    env:
-      SYSTEM_USERNAME: $(SYSTEM_USERNAME)
-      SYSTEM_PASSWORD: $(SYSTEM_PASSWORD)
+        
