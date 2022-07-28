@@ -34,4 +34,4 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        curl --fail http://localhost:3000/health
+        curl --fail http://localhost:3001/health
