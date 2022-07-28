@@ -30,4 +30,4 @@ curl \
 -o my.pdf
 ```
 
-More about gotenberg can be found on the [official docs](https://gotenberg.dev/docs/about) 
+More about Gotenberg can be found on the [official docs](https://gotenberg.dev/docs/about) 
