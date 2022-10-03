@@ -1,4 +1,4 @@
-name: Test Container
+name: Test Container - Gotenberg
 
 on:
   push:
