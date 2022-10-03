@@ -2,11 +2,15 @@ name: Test Container
 
 on:
   push:
-    branches: [ "main" ]
-    paths: ["gotenberg/**"]
+    branches: 
+      - 'main'
+    paths:
+      - 'gotenberg/**'
   pull_request:
-    branches: [ "main" ]
-    paths: ["gotenberg/**"]
+    branches: 
+      - "main"
+    paths: 
+      - 'gotenberg/**'
 
 jobs:
   test:
