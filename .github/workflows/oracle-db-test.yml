@@ -32,8 +32,8 @@ jobs:
           
       - name: 'Test container health'
         run: |
-          chmod +x oracle-db/healthcheck.sh'
-          oracle-db/healthcheck.sh'
+          chmod +x oracle-db/healthcheck.sh
+          oracle-db/healthcheck.sh
         shell: bash
         env:       
           SYSTEM_USERNAME: ${{ secrets.ORACLE_USERNAME }}
