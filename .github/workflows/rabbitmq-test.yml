@@ -1,0 +1,35 @@
+name: Test Container
+
+on:
+  push:
+    branches: 
+      - 'main'
+    paths:
+      - 'gotenberg/**'
+  pull_request:
+    branches: 
+      - "main"
+    paths: 
+      - 'gotenberg/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout repository'
+        uses: actions/checkout@v3
+    
+      - name: 'Build container'
+        run: |
+          docker-compose -f gotenberg/docker-compose.yml up -d
+          
+      - name: 'Wait until container is healthy'
+        run: |
+          wget https://raw.githubusercontent.com/raschmitt/wait-for-healthy-container/master/wait-for-healthy-container.sh
+
+          bash wait-for-healthy-container.sh gotenberg
+          
+      - name: 'Test container health'
+        run: |
+            curl --fail http://localhost:3000/health
