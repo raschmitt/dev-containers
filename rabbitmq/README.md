@@ -21,7 +21,7 @@ curl https://raw.githubusercontent.com/raschmitt/dev-containers/main/rabbitmq/do
 
 ## Credentials
 
-To connect to the broker you can use the following credentials:
+You can access the UI management plugin at [http://localhost:15672](http://localhost:15672), or connect to the broker, with the following credentials:
 
 | Parameter | Value |
 | :---: | :---: |
