@@ -5,12 +5,12 @@ on:
     branches: 
       - 'main'
     paths:
-      - 'rabbitmq/**'
+      - 'gotenberg/**'
   pull_request:
     branches: 
       - "main"
     paths: 
-      - 'rabbitmq/**'
+      - 'gotenberg/**'
 
 jobs:
   test:
