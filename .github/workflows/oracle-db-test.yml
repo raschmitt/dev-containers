@@ -31,7 +31,8 @@ jobs:
           bash wait-for-healthy-container.sh oracle-db
           
       - name: 'Test container health'
-        run: 'oracle-db/healthcheck.sh'
+        run: './oracle-db/healthcheck.sh'
+        shell: bash
         env:       
           SYSTEM_USERNAME: ${{ secrets.ORACLE_USERNAME }}
           SYSTEM_PASSWORD: ${{ secrets.ORACLE_PASSWORD }}
