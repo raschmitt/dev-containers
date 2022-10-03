@@ -1,4 +1,4 @@
-# gotenberg-container ![GitHub branch checks state](https://img.shields.io/github/checks-status/raschmitt/dev-containers/main?label=Build%20%26%20Test&style=flat-square)
+# gotenberg-container [![GitHub branch checks state](https://img.shields.io/github/checks-status/raschmitt/dev-containers/main?label=Build%20%26%20Test&style=flat-square)](https://github.com/raschmitt/dev-containers/actions/workflows/gotenberg-test.yml)
 
 My standard container for local development with [Gotenberg](https://gotenberg.dev/).
 
