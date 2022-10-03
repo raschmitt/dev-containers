@@ -8,7 +8,7 @@ on:
       - 'gotenberg/**'
   pull_request:
     branches: 
-      - "main"
+      - 'main'
     paths: 
       - 'gotenberg/**'
 
