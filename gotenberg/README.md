@@ -1,6 +1,4 @@
-# gotenberg-container
-
-[![Azure DevOps builds](https://img.shields.io/azure-devops/build/raschmitt/7618d927-8467-43e2-b5e9-1aeddc1fbfdc/47?label=Build%20%26%20Test&style=flat-square)](https://dev.azure.com/raschmitt/raschmitt/_build?definitionId=47)
+# gotenberg-container ![GitHub branch checks state](https://img.shields.io/github/checks-status/raschmitt/dev-containers/main?label=Build%20%26%20Test&style=flat-square)
 
 My standard container for local development with [Gotenberg](https://gotenberg.dev/).
 
