@@ -1,6 +1,4 @@
-# oracle-db-container
-
-[![Azure DevOps builds](https://img.shields.io/azure-devops/build/raschmitt/7618d927-8467-43e2-b5e9-1aeddc1fbfdc/43?label=Build%20%26%20Test&style=flat-square)](https://dev.azure.com/raschmitt/raschmitt/_build?definitionId=43)
+# oracle-db-container [![Test Container](https://github.com/raschmitt/dev-containers/actions/workflows/oracle-db-test.yml/badge.svg)](https://github.com/raschmitt/dev-containers/actions/workflows/oracle-db-test.yml)
 
 My standard container for local development with [Oracle Database](https://www.oracle.com/database/).
 
