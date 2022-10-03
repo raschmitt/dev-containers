@@ -1,6 +1,4 @@
-# rabbitmq-container
-
-[![Azure DevOps builds](https://img.shields.io/azure-devops/build/raschmitt/7618d927-8467-43e2-b5e9-1aeddc1fbfdc/40?label=Build%20%26%20Test&style=flat-square)](https://dev.azure.com/raschmitt/raschmitt/_build?definitionId=40)
+# rabbitmq-container [![Test Container](https://github.com/raschmitt/dev-containers/actions/workflows/rabbitmq-test.yml/badge.svg)](https://github.com/raschmitt/dev-containers/actions/workflows/rabbitmq-test.yml)
 
 My standard container for local development with [RabbitMQ](https://www.rabbitmq.com/).
 
