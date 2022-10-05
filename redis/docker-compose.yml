@@ -1,0 +1,10 @@
+services:
+  redis:
+    image: bitnami/redis:latest
+    container_name: redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    healthcheck:
+      test: redis-cli ping | grep PONG
+    ports:
+    - 6379:6379  
