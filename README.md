@@ -1,6 +1,6 @@
 # dev-containers
 
-These are my standard containers for local development.
+Standard containers for local development.
 
 ## Dependencies 
 
