@@ -31,6 +31,12 @@ jobs:
 
           bash wait-for-healthy-container.sh redis
           
+      - name: 'Install redis-cli'
+        run: |
+          apt update
+          apt install redis-cli
+
+
       - name: 'Test container health'
         run: |
           redis-cli ping | grep PONG  
