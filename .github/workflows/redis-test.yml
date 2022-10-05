@@ -34,8 +34,7 @@ jobs:
       - name: 'Install redis-cli'
         run: |
           sudo apt update
-          sudo apt install redis-cli
-
+          sudo apt install redis-tools
 
       - name: 'Test container health'
         run: |
