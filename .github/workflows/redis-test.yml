@@ -1,6 +1,7 @@
 name: Test Container - Redis
 
 on:
+  workflow_dispatch:
   push:
     branches: 
       - 'main'
