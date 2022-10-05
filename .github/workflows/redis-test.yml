@@ -31,7 +31,7 @@ jobs:
 
           bash wait-for-healthy-container.sh redis
           
-      - name: 'Install redis-cli'
+      - name: 'Install redis-tools'
         run: |
           sudo apt update
           sudo apt install redis-tools
