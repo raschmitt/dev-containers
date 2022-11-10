@@ -1,4 +1,4 @@
-# sql-server-container [![Test Container](https://github.com/raschmitt/dev-containers/actions/workflows/redis-test.yml/badge.svg)](https://github.com/raschmitt/dev-containers/actions/workflows/redis-test.yml)
+# redis-container [![Test Container](https://github.com/raschmitt/dev-containers/actions/workflows/redis-test.yml/badge.svg)](https://github.com/raschmitt/dev-containers/actions/workflows/redis-test.yml)
 
 My standard container for local development with [Redis](https://redis.io/).
 
