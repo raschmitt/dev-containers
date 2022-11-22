@@ -9,7 +9,7 @@ Standard containers for local development.
 Each tool has with it's own instructions on how to run and use it.
 
 - [Gotenberg](https://github.com/raschmitt/dev-containers/tree/main/gotenberg)
-- [MySQL](https://github.com/raschmitt/dev-containers/tree/main/redis)
+- [MySQL](https://github.com/raschmitt/dev-containers/tree/main/mysql)
 - [Oracle-DB](https://github.com/raschmitt/dev-containers/tree/main/oracle-db)
 - [RabbitMQ](https://github.com/raschmitt/dev-containers/tree/main/rabbitmq)
 - [Redis](https://github.com/raschmitt/dev-containers/tree/main/redis)
