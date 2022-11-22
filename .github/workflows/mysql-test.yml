@@ -33,4 +33,8 @@ jobs:
 
       - name: 'Test container health'
         run: |
-          mysqladmin ping -h 127.0.0.1 --user=root --password=root@@2022 | grep 'alive' || exit 1
+          mysqladmin ping \
+          --host=${{ secrets.MYSQL_HOST }} \
+          --user=${{ secrets.MYSQL_USER }} \
+          --password=${{ secrets.MYSQL_PASSWORD }} \
+          | grep 'alive' || exit 1
