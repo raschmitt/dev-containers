@@ -1,0 +1,15 @@
+volumes:
+  mysql:
+
+services:
+  mysql:
+    image: mysql
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root@@2022
+    healthcheck:
+      test: mysqladmin ping --password=$$MYSQL_ROOT_PASSWORD | grep 'alive' || exit 1
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql:/var/lib/mysql
