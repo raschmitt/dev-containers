@@ -1,4 +1,4 @@
-name: Test Container - SqlServer
+name: Test Container - OracleDb
 
 on:
   workflow_dispatch:
