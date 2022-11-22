@@ -1,4 +1,4 @@
-name: Test Container - SqlServer
+name: Test Container - MySQL
 
 on:
   workflow_dispatch:
@@ -6,12 +6,12 @@ on:
     branches: 
       - 'main'
     paths:
-      - 'sql-server/**'
+      - 'mysql/**'
   pull_request:
     branches: 
       - 'main'
     paths: 
-      - 'sql-server/**'
+      - 'mysql/**'
 
 jobs:
   test:
@@ -23,15 +23,18 @@ jobs:
     
       - name: 'Build container'
         run: |
-          docker-compose -f sql-server/docker-compose.yml up -d
+          docker-compose -f mysql/docker-compose.yml up -d
           
       - name: 'Wait until container is healthy'
         run: |
           wget https://raw.githubusercontent.com/raschmitt/wait-for-healthy-container/master/wait-for-healthy-container.sh
 
-          bash wait-for-healthy-container.sh sql-server
-          
+          bash wait-for-healthy-container.sh mysql
+
       - name: 'Test container health'
         run: |
-            sqlcmd -S ${{ secrets.SQL_SERVER_SERVER }} -U ${{ secrets.SQL_SERVER_USERNAME }} -P ${{ secrets.SQL_SERVER_PASSWORD }} -Q "SELECT 1"
-
+          mysqladmin ping \
+          --host=${{ secrets.MYSQL_HOST }} \
+          --user=${{ secrets.MYSQL_USER }} \
+          --password=${{ secrets.MYSQL_PASSWORD }} \
+          | grep 'alive' || exit 1

@@ -1,4 +1,4 @@
-name: Test Container - SqlServer
+name: Test Container - Redis
 
 on:
   workflow_dispatch:
@@ -6,12 +6,12 @@ on:
     branches: 
       - 'main'
     paths:
-      - 'sql-server/**'
+      - 'redis/**'
   pull_request:
     branches: 
       - 'main'
     paths: 
-      - 'sql-server/**'
+      - 'redis/**'
 
 jobs:
   test:
@@ -23,15 +23,19 @@ jobs:
     
       - name: 'Build container'
         run: |
-          docker-compose -f sql-server/docker-compose.yml up -d
+          docker-compose -f redis/docker-compose.yml up -d
           
       - name: 'Wait until container is healthy'
         run: |
           wget https://raw.githubusercontent.com/raschmitt/wait-for-healthy-container/master/wait-for-healthy-container.sh
 
-          bash wait-for-healthy-container.sh sql-server
+          bash wait-for-healthy-container.sh redis
           
+      - name: 'Install redis-tools'
+        run: |
+          sudo apt update
+          sudo apt install redis-tools
+
       - name: 'Test container health'
         run: |
-            sqlcmd -S ${{ secrets.SQL_SERVER_SERVER }} -U ${{ secrets.SQL_SERVER_USERNAME }} -P ${{ secrets.SQL_SERVER_PASSWORD }} -Q "SELECT 1"
-
+          redis-cli ping | grep PONG  
