@@ -31,11 +31,6 @@ jobs:
 
           bash wait-for-healthy-container.sh mongo
 
-      - name: 'Install mongosh'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y mongodb-mongosh
-
       - name: 'Test container health'
         run: |
           echo 'db.runCommand("ping").ok' | mongosh --quiet
