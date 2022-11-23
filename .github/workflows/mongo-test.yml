@@ -33,4 +33,4 @@ jobs:
 
       - name: 'Test container health'
         run: |
-          echo 'db.runCommand("ping")' | mongosh --quiet | grep -q 'ok: 1' && echo "Healthy" || echo "Unhealthy"; exit 1
+          echo 'db.runCommand("ping")' | mongosh --quiet | grep -q 'ok: 1' && echo "Healthy" || { echo "Unhealthy"; exit 1;}
