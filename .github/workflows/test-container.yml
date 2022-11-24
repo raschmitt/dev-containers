@@ -6,7 +6,7 @@ on:
         type: string
 
 jobs:
-  test-container:
+  test-container-workflow:
     runs-on: ubuntu-latest
     environment: production
     steps:
