@@ -18,25 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'Checkout repository'
-        uses: actions/checkout@v3
-    
-      - name: 'Build container'
-        run: |
-          docker-compose -f oracle-db/docker-compose.yml up -d
-          
-      - name: 'Wait until container is healthy'
-        run: |
-          wget https://raw.githubusercontent.com/raschmitt/wait-for-healthy-container/master/wait-for-healthy-container.sh
-
-          bash wait-for-healthy-container.sh oracle-db
-          
-      - name: 'Test container health'
-        run: |
-          chmod +x oracle-db/healthcheck.sh
-          oracle-db/healthcheck.sh
-        shell: bash
-        env:       
-          SYSTEM_USERNAME: ${{ secrets.ORACLE_USERNAME }}
-          SYSTEM_PASSWORD: ${{ secrets.ORACLE_PASSWORD }}
-
+      - name: 'Test Container'
+        uses: raschmitt/dev-containers/.github/workflows/reusable-workflow.yml@feature/add-actions-oracle-db
+        with:
+          container-name: oracle-db
