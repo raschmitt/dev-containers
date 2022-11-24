@@ -14,11 +14,7 @@ on:
       - 'oracle-db/**'
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 'Test Container'
-        uses: raschmitt/dev-containers/.github/workflows/reusable-workflow.yml@feature/add-actions-oracle-db
-        with:
-          container-name: oracle-db
+    call-workflow-passing-data:
+      uses: raschmitt/dev-containers/.github/workflows/reusable-workflow.yml@feature/add-actions-oracle-db
+      with:
+        container-name: oracle-db
