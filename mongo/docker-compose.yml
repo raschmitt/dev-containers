@@ -1,0 +1,13 @@
+volumes:
+  mongo:
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh --quiet
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo:/data/db
