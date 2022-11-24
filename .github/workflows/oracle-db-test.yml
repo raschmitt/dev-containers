@@ -26,7 +26,7 @@ jobs:
           docker-compose -f oracle-db/docker-compose.yml up -d
           
       - name: 'Wait until container is healthy'
-        uses: raschmitt/wait-for-healthy-container/@v3
+        uses: raschmitt/wait-for-healthy-container/@v4
         with:
           container-name: oracle-db
           
