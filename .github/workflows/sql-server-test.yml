@@ -14,24 +14,9 @@ on:
       - 'sql-server/**'
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 'Checkout repository'
-        uses: actions/checkout@v3
-    
-      - name: 'Build container'
-        run: |
-          docker-compose -f sql-server/docker-compose.yml up -d
-          
-      - name: 'Wait until container is healthy'
-        run: |
-          wget https://raw.githubusercontent.com/raschmitt/wait-for-healthy-container/master/wait-for-healthy-container.sh
-
-          bash wait-for-healthy-container.sh sql-server
-          
-      - name: 'Test container health'
-        run: |
-            sqlcmd -S ${{ secrets.SQL_SERVER_SERVER }} -U ${{ secrets.SQL_SERVER_USERNAME }} -P ${{ secrets.SQL_SERVER_PASSWORD }} -Q "SELECT 1"
-
+    test-container:
+      name: 'Test Container'
+      uses: raschmitt/dev-containers/.github/workflows/test-container.yml@main
+      with:
+        container-name: sql-server
+        

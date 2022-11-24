@@ -14,27 +14,8 @@ on:
       - 'mysql/**'
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 'Checkout repository'
-        uses: actions/checkout@v3
-    
-      - name: 'Build container'
-        run: |
-          docker-compose -f mysql/docker-compose.yml up -d
-          
-      - name: 'Wait until container is healthy'
-        run: |
-          wget https://raw.githubusercontent.com/raschmitt/wait-for-healthy-container/master/wait-for-healthy-container.sh
-
-          bash wait-for-healthy-container.sh mysql
-
-      - name: 'Test container health'
-        run: |
-          mysqladmin ping \
-          --host=${{ secrets.MYSQL_HOST }} \
-          --user=${{ secrets.MYSQL_USER }} \
-          --password=${{ secrets.MYSQL_PASSWORD }} \
-          | grep 'alive' || exit 1
+    test-container:
+      name: 'Test Container'
+      uses: raschmitt/dev-containers/.github/workflows/test-container.yml@main
+      with:
+        container-name: mysql

@@ -14,28 +14,8 @@ on:
       - 'redis/**'
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 'Checkout repository'
-        uses: actions/checkout@v3
-    
-      - name: 'Build container'
-        run: |
-          docker-compose -f redis/docker-compose.yml up -d
-          
-      - name: 'Wait until container is healthy'
-        run: |
-          wget https://raw.githubusercontent.com/raschmitt/wait-for-healthy-container/master/wait-for-healthy-container.sh
-
-          bash wait-for-healthy-container.sh redis
-          
-      - name: 'Install redis-tools'
-        run: |
-          sudo apt update
-          sudo apt install redis-tools
-
-      - name: 'Test container health'
-        run: |
-          redis-cli ping | grep PONG  
+    test-container:
+      name: 'Test Container'
+      uses: raschmitt/dev-containers/.github/workflows/test-container.yml@main
+      with:
+        container-name: redis

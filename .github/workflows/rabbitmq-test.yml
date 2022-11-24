@@ -14,23 +14,9 @@ on:
       - 'rabbitmq/**'
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 'Checkout repository'
-        uses: actions/checkout@v3
-    
-      - name: 'Build container'
-        run: |
-          docker-compose -f rabbitmq/docker-compose.yml up -d
-          
-      - name: 'Wait until container is healthy'
-        run: |
-          wget https://raw.githubusercontent.com/raschmitt/wait-for-healthy-container/master/wait-for-healthy-container.sh
-
-          bash wait-for-healthy-container.sh rabbitmq
-          
-      - name: 'Test container health'
-        run: |
-            curl --user ${{ secrets.RABBITMQ_USERNAME }}:${{ secrets.RABBITMQ_PASSWORD }} --fail localhost:15672/api/nodes
+    test-container:
+      name: 'Test Container'
+      uses: raschmitt/dev-containers/.github/workflows/test-container.yml@main
+      with:
+        container-name: rabbitmq
+        
