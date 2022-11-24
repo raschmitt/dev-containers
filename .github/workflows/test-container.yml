@@ -6,7 +6,7 @@ on:
         type: string
 
 jobs:
-  reusable_workflow_job:
+  test-container:
     runs-on: ubuntu-latest
     environment: production
     steps:

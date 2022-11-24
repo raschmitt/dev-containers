@@ -16,6 +16,6 @@ on:
 jobs:
     test-container:
       name: 'Test Container'
-      uses: raschmitt/dev-containers/.github/workflows/reusable-workflow.yml@feature/add-actions-oracle-db
+      uses: raschmitt/dev-containers/.github/workflows/test-container.yml@feature/add-actions-oracle-db
       with:
         container-name: oracle-db
