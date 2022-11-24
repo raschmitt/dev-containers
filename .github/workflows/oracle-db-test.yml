@@ -25,7 +25,7 @@ jobs:
         run: |
           docker-compose -f oracle-db/docker-compose.yml up -d
           
-      - name: 'Checkout repository'
+      - name: 'Wait until container is healthy'
         uses: raschmitt/wait-for-healthy-container/@v1
         with:
           container-name: oracle-db
