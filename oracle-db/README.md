@@ -11,10 +11,8 @@ My standard container for local development with [Oracle Database](https://www.o
 To build and run the container use this command:
 
 ```
-curl https://raw.githubusercontent.com/raschmitt/dev-containers/main/oracle-db/docker-compose.yml \
--o docker-compose.yml \
-&& curl https://raw.githubusercontent.com/raschmitt/dev-containers/main/oracle-db/healthcheck.sh \
--o healthcheck.sh \
+curl https://raw.githubusercontent.com/raschmitt/dev-containers/main/oracle-db/docker-compose.yml -o docker-compose.yml \
+&& curl https://raw.githubusercontent.com/raschmitt/dev-containers/main/oracle-db/healthcheck.sh -o healthcheck.sh \
 && docker-compose up -d \
 && rm docker-compose.yml \
 && rm healthcheck.sh
