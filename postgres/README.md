@@ -1,4 +1,4 @@
-# postgres-container [![Test Container](https://github.com/raschmitt/dev-containers/actions/workflows/rabbitmq-test.yml/badge.svg)](https://github.com/raschmitt/dev-containers/actions/workflows/rabbitmq-test.yml)
+# postgres-container [![Test Container](https://github.com/raschmitt/dev-containers/actions/workflows/postgres-test.yml/badge.svg)](https://github.com/raschmitt/dev-containers/actions/workflows/postgres-test.yml)
 
 My standard container for local development with [PostgreSQL](https://www.postgresql.org/).
 
