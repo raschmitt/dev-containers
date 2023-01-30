@@ -1,0 +1,16 @@
+volumes:
+  postgres:
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres@2023
+    healthcheck:
+      test: pg_isready
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - 5432:5432
+    restart: on-failure
