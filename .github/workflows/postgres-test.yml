@@ -1,0 +1,22 @@
+name: Test Container - Postgres
+
+on:
+  workflow_dispatch:
+  push:
+    branches: 
+      - 'main'
+    paths:
+      - 'postgres/**'
+  pull_request:
+    branches: 
+      - 'main'
+    paths: 
+      - 'postgres/**'
+
+jobs:
+    test-container:
+      name: 'Test Container'
+      uses: raschmitt/dev-containers/.github/workflows/test-container-workflow.yml@main
+      with:
+        container-name: postgres
+        
