@@ -1,0 +1,9 @@
+services:     
+    nginx:
+        image: nginx
+        container_name: nginx
+        healthcheck:
+            test: curl --fail http://localhost:80
+        ports:
+            - 80:80
+        restart: on-failure
