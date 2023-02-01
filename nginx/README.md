@@ -1,4 +1,4 @@
-# nginx-container [![Test Container](https://github.com/raschmitt/dev-containers/actions/workflows/nginx-test.yml/badge.svg)](https://github.com/raschmitt/dev-containers/actions/workflows/postgres-test.yml)
+# nginx-container [![Test Container](https://github.com/raschmitt/dev-containers/actions/workflows/nginx-test.yml/badge.svg)](https://github.com/raschmitt/dev-containers/actions/workflows/nginx-test.yml)
 
 My standard container for local development with [Nginx](https://www.nginx.com/).
 
