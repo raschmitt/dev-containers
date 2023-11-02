@@ -25,4 +25,4 @@ To connect to the database you can use the following credentials:
 | :---: | :---: |
 | Server name | 127.0.0.1,5432 |
 | Login | postgres |
-| Paswword | postgres@2023 |
+| Password | postgres@2023 |
