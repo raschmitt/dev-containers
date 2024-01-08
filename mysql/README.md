@@ -25,6 +25,6 @@ To connect to the database you can use the following credentials:
 | :---: | :---: |
 | Server host | localhost,3306 |
 | Login | root |
-| Paswword | root@@2022 |
+| Password | root@@2022 |
 
 Also make sure to enable `allowPublicKeyRetrieval` as discussed [here](allowPublicKeyRetrieval).
