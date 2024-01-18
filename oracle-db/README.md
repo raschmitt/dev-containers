@@ -27,4 +27,4 @@ To connect to the database you can use the following credentials:
 | Hostname | localhost|
 | Port | 1521|
 | Username |  system |
-| Paswword | oracle |
+| Password | oracle |
