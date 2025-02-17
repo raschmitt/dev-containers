@@ -16,6 +16,6 @@ on:
 jobs:
     test-container:
       name: 'Test Container'
-      uses: raschmitt/dev-containers/.github/workflows/test-container-workflow.yml@main
+      uses: raschmitt/dev-containers/.github/workflows/test-container-workflow.yml@feat/upgrade-docker-compose
       with:
         container-name: mysql
