@@ -1,0 +1,16 @@
+volumes:
+    sql-server:
+
+services:     
+    sql-server:
+        image: "mcr.microsoft.com/mssql/server:2022-latest"
+        container_name: sql-server
+        environment:
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD=sa@@2022
+        healthcheck:
+            test: /opt/mssql-tools18/bin/sqlcmd -U sa -P $$MSSQL_SA_PASSWORD -Q "SELECT 1" -N o
+        ports:
+            - 1433:1433
+        volumes: 
+            - sql-server:/var/opt/mssql

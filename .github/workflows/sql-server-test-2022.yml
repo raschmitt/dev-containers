@@ -1,4 +1,4 @@
-name: Test Container - SqlServer
+name: Test Container - SqlServer2022
 
 on:
   workflow_dispatch:
@@ -6,12 +6,12 @@ on:
     branches: 
       - 'main'
     paths:
-      - 'sql-server/**'
+      - 'sql-server/2022/**' 
   pull_request:
     branches: 
       - 'main'
     paths: 
-      - 'sql-server/**'
+      - 'sql-server/2022/**'
 
 jobs:
     test-container:
@@ -19,4 +19,4 @@ jobs:
       uses: raschmitt/dev-containers/.github/workflows/test-container-workflow.yml@main
       with:
         container-name: sql-server
-        
+        subfolder: 2022
