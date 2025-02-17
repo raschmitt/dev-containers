@@ -13,7 +13,7 @@ To build and run the container use this command:
 ```
 curl https://raw.githubusercontent.com/raschmitt/dev-containers/main/sql-server/docker-compose.yml \
 -o docker-compose.yml \
-&& docker-compose up -d \
+&& docker compose -d \
 && rm docker-compose.yml
 ```
 
