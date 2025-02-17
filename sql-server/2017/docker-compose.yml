@@ -7,7 +7,7 @@ services:
         container_name: sql-server
         environment:
             - ACCEPT_EULA=Y
-            - SA_PASSWORD=sa@@2020
+            - SA_PASSWORD=sa@@2017
         healthcheck:
             test: /opt/mssql-tools/bin/sqlcmd -U sa -P $$SA_PASSWORD -Q "SELECT 1"
         ports:
