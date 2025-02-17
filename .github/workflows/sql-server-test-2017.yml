@@ -16,7 +16,8 @@ on:
 jobs:
     test-container:
       name: 'Test Container'
-      uses: raschmitt/dev-containers/.github/workflows/test-container-workflow.yml@main
+      uses: raschmitt/dev-containers/.github/workflows/test-container-workflow.yml@feat/add-sql-server-2022
       with:
         container-name: sql-server
+        subfolder: 2017
         
