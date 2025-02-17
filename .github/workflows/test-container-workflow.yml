@@ -23,6 +23,8 @@ jobs:
           else
             docker compose -f ${{ inputs.container-name }}/docker-compose.yml up -d
           fi
+
+          watch docker ps
       
       - name: 'Wait until container is healthy'
         uses: raschmitt/wait-for-healthy-container@v1
