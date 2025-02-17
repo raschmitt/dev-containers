@@ -16,4 +16,5 @@ Each tool has with it's own instructions on how to run and use it.
 - [Postgres](https://github.com/raschmitt/dev-containers/tree/main/postgres)
 - [RabbitMQ](https://github.com/raschmitt/dev-containers/tree/main/rabbitmq)
 - [Redis](https://github.com/raschmitt/dev-containers/tree/main/redis)
-- [SQL-Server](https://github.com/raschmitt/dev-containers/tree/main/sql-server)
+- [SQL-Server 2017](https://github.com/raschmitt/dev-containers/tree/main/sql-server/2017)
+- [SQL-Server 2022](https://github.com/raschmitt/dev-containers/tree/main/sql-server/2022)
