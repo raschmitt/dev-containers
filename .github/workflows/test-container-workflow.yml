@@ -7,10 +7,14 @@ on:
       subfolder:
         required: false
         type: string
+      os: # only used for sql-server-2017, while this is not fixed: https://github.com/microsoft/mssql-docker/issues/881
+        required: false
+        type: string
+        default: 'ubuntu-latest'  
 
 jobs:
   test-container-workflow:
-    runs-on: ubuntu-22.04
+    runs-on: ${{ inputs.os }}
     environment: production
     steps:
       - name: 'Checkout repository'

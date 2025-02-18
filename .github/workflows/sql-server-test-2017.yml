@@ -20,3 +20,4 @@ jobs:
       with:
         container-name: sql-server
         subfolder: 2017        
+        os: ubuntu-22.04
